@@ -30,10 +30,13 @@ namespace App1.UnitTestProject
         [Test]
         public void ClickThirdItemThenGoBack()
         {
+            app.Screenshot("Home Screen");
+
             var thirdItemExists = app.Query("Third item").Any();
             Assert.IsTrue(thirdItemExists);
             app.Tap(x => x.Text("Third item"));
 
+            app.Screenshot("Item Details Screen");
             app.WaitForElement(x => x.Marked("Description:"));
             var descrptionExists = app.Query("This is an item description.").Any();
             Assert.IsTrue(descrptionExists);
@@ -46,7 +49,7 @@ namespace App1.UnitTestProject
             Assert.IsTrue(addExists);
             app.Tap(x => x.Text("Add"));
 
-
+            app.Screenshot("Add Item Screen");
             app.WaitForElement(x => x.Marked("Description"));
             app.Back();
 
