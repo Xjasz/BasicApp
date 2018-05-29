@@ -31,7 +31,6 @@ namespace App1.UnitTestProject
         public void ClickThirdItemThenGoBack()
         {
             app.Screenshot("Home Screen");
-
             var thirdItemExists = app.Query("Third item").Any();
             Assert.IsTrue(thirdItemExists);
             app.Tap(x => x.Text("Third item"));
