@@ -50,7 +50,14 @@ namespace App1.UnitTestProject
 
             app.Screenshot("Add Item Screen");
             app.WaitForElement(x => x.Marked("Description"));
-            app.Back();
+
+            app.Tap(x => x.Marked("ItemName"));
+            app.EnterText(x => x.Marked("ItemName"), "Test Run Item");
+            app.Tap(x => x.Marked("ItemDescription"));
+            app.ClearText(x => x.Marked("ItemDescription"));
+            app.EnterText(x => x.Marked("ItemDescription"), "Extra information a bout the test run...");
+            app.Tap(x => x.Text("Save"));
+            app.WaitForElement(x => x.Marked("About"));
 
         }
 
