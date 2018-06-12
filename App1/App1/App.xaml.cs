@@ -23,7 +23,6 @@ namespace App1
 		{
             AppCenter.Start("android=cea1a7fa-f58f-40b3-bcb3-a90b224a46bc;",
                  typeof(Analytics), typeof(Crashes));
-            // Handle when your app starts
         }
 
 		protected override void OnSleep ()

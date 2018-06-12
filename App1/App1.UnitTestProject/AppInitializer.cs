@@ -13,7 +13,7 @@ namespace App1.UnitTestProject
 
                 return ConfigureApp
                     .Android
-                    .DeviceSerial(Emulator)
+                    .DeviceSerial(Device)
                     .ApkFile(@"C:\Users\nicholascodalata\source\repos\basicapp\App1\App1.Android\bin\Debug\App1.UITesting.apk")
                     .StartApp();
             }
